@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+     	<table style="width: 100%;">
+			<tr>
+				<td align="center">
+					<h:form>
+			     	<table>
+						<tr>
+							<td colspan="5">
+								<div data-role="controlgroup" 
+										data-type="horizontal">
+									<h:commandButton class="push rnumpad correction" value="+" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="+" />
+									</h:commandButton>
+									<h:commandButton class="push rnumpad correction" value="-" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="-" />
+									</h:commandButton>
+									<h:commandButton class="push rnumpad correction" value="&#8901;" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="*" />
+									</h:commandButton>
+									<h:commandButton class="push rnumpad correction" value=":" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="/" />
+									</h:commandButton>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div data-role="controlgroup" 
+										data-type="horizontal">
+									<h:commandButton class="push rnumpad2 correction" value="+ -" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="+-" />
+									</h:commandButton>
+									<h:commandButton class="push rnumpad2 correction" value="&#8901; :" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="*/" />
+									</h:commandButton>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div data-role="controlgroup" 
+										data-type="horizontal">
+									<h:commandButton class="push rnumpad4 correction" value="+ - &#8901; :" action="#{levelBean.selectOperators}">
+										 <f:param name="operators" value="+-*/" />
+									</h:commandButton>
+								</div>
+							</td>
+						</tr>
+				</table>
+				</h:form>
+				</td>
+			</tr>
+		</table>
+    </ui:define>
+</ui:composition>
+</html>

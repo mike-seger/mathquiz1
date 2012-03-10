@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<h:outputStylesheet target="head"> body { overflow-y:auto; } </h:outputStylesheet>	
+		<h:outputScript name="js/math-report.js" target="head" />
+		<table width="100%" class="report">
+			<tr>
+				<td align="left">
+					<h:dataTable  styleClass="zebradata" rowIndexVar="rowno" 
+						rowClasses="zebradata-1, zebradata-2"
+						var="row" value="#{utilBean.requestHeaders}" border="1">
+						<f:facet name="header">
+							<h:outputText value="HTTP Headers" />
+						</f:facet>
+						<h:column>
+							<f:facet name="header">Name</f:facet>
+							<h:outputText value="#{row.name}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Value</f:facet>
+							<h:outputText value="#{row.value}" />
+						</h:column>
+					</h:dataTable>
+				</td>
+			</tr>
+		</table>
+	</ui:define>
+</ui:composition>
+</html>

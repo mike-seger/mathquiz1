@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:view contentType="text/html"/>
+
+<h:head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="-1"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+<title><ui:insert name="title">Math Quiz</ui:insert></title>
+
+<script type="text/javascript" src="resources/js/math-global-init.js"/>
+
+<link rel="stylesheet" href="resources/css/rbuttons.css" />
+<link rel="stylesheet" href="resources/css/mathquiz.css" />
+<link rel="stylesheet" href="resources/css/mathquiz-report.css" />
+</h:head>
+<h:body>
+
+<div data-role="page" data-theme="b">
+	<div id="header">
+		<ui:insert name="header">
+			<div data-role="header" data-theme="b">
+				<ui:include src="/WEB-INF/templates/header.xhtml" />
+			</div>
+		</ui:insert>
+	</div>
+
+	<div id="content">
+	<div data-role="content" data-theme="b">
+	<ui:insert name="content"/>
+	</div></div>
+	
+	<div data-role="footer" data-theme="b">
+	<div id="footer">
+	<ui:insert name="footer">
+		<ui:include src="/WEB-INF/templates/footer.xhtml" />
+	</ui:insert>
+	</div>
+	</div>
+</div>
+
+</h:body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+		<ui:define name="content">
+			<h:outputStylesheet target="head"> body { overflow:auto; } </h:outputStylesheet>	
+			<h:outputScript name="js/math-report.js" target="head" />
+			<table width="100%" class="report">
+				<tr>
+					<td align="left">
+						<h:form id="tableform">
+							<h:dataTable  styleClass="zebradata" rowIndexVar="rowno"
+								rowClasses="zebradata-1, zebradata-2"
+								var="row" value="#{reportBean.sessions}" border="1">
+								<f:facet name="header">
+									Sessions<c:if test="#{reportBean.user != null}"> of #{reportBean.user.name}</c:if>
+								</f:facet>
+								
+								<h:column>
+									<f:facet name="header">#</f:facet>
+									<h:outputText value="#{utilBean.row}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">ID</f:facet>
+									<h:commandButton type="submit" styleClass="rowSubmit" action="#{reportBean.showExercises(row.id)}" />
+									<h:outputText value="#{row.id}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">Started</f:facet>
+									<h:outputText style="white-space:nowrap;" value="#{row.created}">  
+		            					<f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>  
+		        					</h:outputText>
+						        </h:column>
+
+						        <c:if test="#{reportBean.userId == null}">
+									<h:column>
+										<f:facet name="header">User</f:facet>
+										<h:outputText value="#{row.user.name}"/>
+							        </h:column>
+								</c:if>
+								
+								<h:column>
+									<f:facet name="header">IP Address</f:facet>
+									<h:outputText value="#{row.ipAddress}"/>
+								</h:column>
+								<h:column>
+									<f:facet name="header">User Agent</f:facet>
+									<h:outputText value="#{row.userAgent}"/>
+								</h:column>
+							</h:dataTable>
+						</h:form>
+					</td>
+				</tr>
+			</table>
+		</ui:define>
+	</ui:composition>
+</html>

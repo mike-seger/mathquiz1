@@ -1,0 +1,75 @@
+table.zebradata {
+	font-family: verdana,arial,sans-serif;
+	font-size:1.2em;
+	color:#333333;
+	border-width: 0.0625em;
+	border-color: #999999;
+	border-collapse: collapse;
+	margin: 0.25em 0.75em 0.25em 0.75em;
+}
+
+table.zebradata a {
+	color:#333333;
+}
+
+table.zebradata th {
+	background-color:rgb(102,130,181);
+	color: white;
+	text-align: left;
+	border-width: 0.07em;
+	padding: 0.4em;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+.zebradata-hl {
+	background-color:#ffff66;
+}
+
+.zebradata-1 {
+	background-color:#d4e3e5;
+}
+
+.zebradata-2 {
+	background-color:#d0dfe1;
+}
+
+table.zebradata td {
+	border-width: 0.07em;
+	padding: 0.4em;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+.datacol {
+	
+}
+
+.datacol-r {
+	text-align: right;
+}
+
+.datacol-c {
+	text-align: center;
+}
+
+.rowLink {
+	text-decoration: none;	
+}
+
+.rowSubmit {
+	background:transparent;
+	width: 0;
+	height: 0;
+}
+
+.report {
+	margin: 0;
+	//margin: -0.73em -0.90em -0.35em -0.95em;
+	width: 100.2%;
+}
+
+.report * {
+	font-size: 40px;
+}
+

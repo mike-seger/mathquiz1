@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+		<ui:define name="content">
+			<h:outputStylesheet target="head"> body { overflow-y:auto; } </h:outputStylesheet>	
+			<h:outputScript name="js/math-report.js" target="head" />
+			<table width="100%" class="report">
+				<tr>
+					<td align="left">
+						<h:form id="tableform">
+							<h:dataTable  styleClass="zebradata" rowIndexVar="rowno"
+								rowClasses="zebradata-1, zebradata-2"
+								var="row" value="#{reportBean.userReport}" border="1">
+								<f:facet name="header">
+									<h:outputText value="Users" />
+								</f:facet>
+								<h:column>
+									<f:facet name="header">#</f:facet>
+									<h:outputText value="#{utilBean.row}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">ID</f:facet>
+									<h:commandButton type="submit" styleClass="rowSubmit" action="#{reportBean.showSessions(row.user.id)}" />
+									<h:outputText value="#{row.user.id}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">Name</f:facet>
+									<h:outputText value="#{row.user.name}"/>
+						        </h:column>
+<!-- 								<h:column> -->
+<!-- 									<f:facet name="header">Last Login</f:facet> -->
+<!-- 									<h:outputText value="#{row.lastLogin}">   -->
+<!-- 		            					<f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>   -->
+<!-- 		        					</h:outputText> -->
+<!-- 						        </h:column> -->
+								<h:column>
+									<f:facet name="header"># Sessions</f:facet>
+									<h:outputText value="#{row.numberOfSessions}"/>
+						        </h:column>
+<!-- 								<h:column> -->
+<!-- 									<f:facet name="header">Number of Exercises</f:facet> -->
+<!-- 									<h:outputText value="#{row.numberOfExercises}"/> -->
+<!-- 						        </h:column> -->
+							</h:dataTable>
+						</h:form>
+					</td>
+				</tr>
+			</table>
+		</ui:define>
+	</ui:composition>
+</html>

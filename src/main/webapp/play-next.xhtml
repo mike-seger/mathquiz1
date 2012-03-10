@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    
+    <ui:define name="content">
+		<h:outputScript target="head" name='jsgauge/gauge.js'/>
+    	<table style="width: 100%;">
+    		<tr><td align="center">
+	 			<div style="font-weight:bold; text-shadow:none;">
+		 			<h:form id="playNext">
+						<table style="border: 0;">
+							<tr>
+								<td>
+									<div class="gaugecell">
+									<canvas id="score" class="gauge" width="100px" height="100px"/>
+									</div>
+									<div class="gaugecell">
+									<canvas id="total" class="gauge" width="100px" height="100px"/>
+									</div>
+									<h:outputScript name='js/play-init-gauge.js'/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input id="v_score" type="hidden" value="#{levelBean.score}"/>
+									<input id="v_totalscore" type="hidden" value="#{levelBean.highScoreValue}"/>
+									<h:commandButton type="submit" id="ok" class="rbutton-l push" value="Play Again" action="#{levelBean.generateLevel}"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h:commandButton class="rbutton-l push" value="Change Level" action="#{levelBean.chooseLevel}"/>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<h:commandButton class="rbutton-l push" value="High Scores" action="list-scores"/>
+								</td>
+							</tr>
+						</table>
+					</h:form>
+				</div>
+			</td></tr>
+		</table>
+    </ui:define>
+</ui:composition>
+</html>

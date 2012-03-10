@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+ 		<h:form id="playform">
+	    	<table style="width: 100%;">
+	    		<tr><td align="center">
+		 			<div style="font-weight:bold; text-shadow:none;">
+			 			<div class="equationline">
+							<h:outputText id="equation" class="equation" value=
+								"#{levelBean.singleOperationTerm.number1}#{levelBean.singleOperationTerm.operator.character}#{levelBean.singleOperationTerm.number2}="
+								immediate="true"
+								/>
+							<h:inputText pattern="[0-9]*" autocomplete="off" onclick="pushbutton(this);" class="equation equationvariable equationresult" id="result" name="result" 
+								maxlength="4" size="4" value="#{levelBean.answer}">
+							</h:inputText>
+							<span class="equation equationcorrect" id="comment"/>						
+						</div>
+						<table style="border: 0;">
+							<tr>
+								<td>
+									<div data-role="controlgroup" 
+											data-type="horizontal">
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="1" /> 
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="2" />
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="3" />
+										<input class="push rnumpad" id="backspace" onclick="pushbutton(this)" type="button"
+											value="&#8592;" data-theme="b" data-icon="arrow-l" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div data-role="controlgroup" 
+											data-type="horizontal">
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="4" />
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="5" /> 
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="6" />
+										<input class="push rnumpad" id="clear" type="button" onclick="pushbutton(this)"
+											value="&#8203;X" data-theme="b" data-icon="delete" />		
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div data-role="controlgroup" 
+											data-type="horizontal">
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="7" /> 
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="8" />
+										<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="9" />
+										<h:commandButton styleClass="push rnumpad correction" style="height: 2.135em;" type="submit" id="level" 
+											value="+-&#8901;:" action="#{levelBean.chooseLevel}"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input class="push rnumpad" type="button" onclick="pushbutton(this)" value="0" />
+									<h:commandButton id="ok" styleClass="push rnumpad playok correction" 
+										onclick="return pushbutton(this);" onkeypress="return keybutton(this);" action="#{levelBean.generateLevel}"
+										value="OK #{levelBean.timeSecs}s" type="submit">
+											<f:ajax event="click" execute="@form" render="levelvalues equation" listener="#{levelBean.generateLevel}"/>
+									</h:commandButton>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td></tr>
+				<tr><td>
+					<h:outputScript name="js/math-init.js" target="head" />
+					<h:outputStylesheet name="css/progressbar.css"/>
+					
+					<h:panelGroup id="levelvalues">
+						<input type="hidden" id="correctresult" value="#{levelBean.singleOperationTerm.result}" />
+						<input type="hidden" id="timeSecs" value="#{levelBean.timeSecs}" />
+						<div class="meter" style="margin:1em 0 0.5em 0; width: 100%; height:1.2em;">
+				        	<span id="percentdisplay" style="width: #{levelBean.stepsPrevPercent}%"></span>
+				        	<input type="hidden" id="stepsPercent" value="#{levelBean.stepsPercent}" />
+						</div>
+					</h:panelGroup>
+				</td></tr>
+			</table>		
+		</h:form>
+    </ui:define>
+</ui:composition>
+</html>

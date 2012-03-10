@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+		<ui:define name="content">
+			<h:outputStylesheet target="head"> body { overflow-y:auto; } </h:outputStylesheet>	
+			<h:outputScript name="js/math-report.js" target="head" />
+			<table width="100%" class="report">
+				<tr>
+					<td align="left">
+						<h:form>
+							<h:dataTable  styleClass="zebradata" rowIndexVar="rowno"  
+								columnClasses="datacol, datacol, datacol, datacol, datacol-r, datacol-c, 
+									datacol, datacol, datacol-r, datacol-r, datacol-r"
+								rowClasses="zebradata-1, zebradata-2"
+								var="row" value="#{reportBean.singleOperationTermList}" border="1">
+							<f:facet name="header">
+								<h:outputText value="Single Tests" />
+							</f:facet>
+							<h:column>
+								<f:facet name="header">#</f:facet>
+								<h:outputText value="#{utilBean.row}" /> 
+							</h:column>
+							<h:column>
+								<f:facet name="header">Started</f:facet>
+								<h:outputText value="#{row.created}">  
+	            					<f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>  
+	        					</h:outputText>
+					        </h:column>
+							<h:column>
+								<f:facet name="header">Test</f:facet>
+					            #{row.number1} #{row.operator.string} #{row.number2}
+					        </h:column>
+							<h:column>
+								<f:facet name="header">Answer</f:facet>
+					            #{row.answer}
+					            <f:attribute name="align" value="right" />
+					        </h:column>
+							<h:column >
+								<f:facet name="header">Correct</f:facet>
+					            <h:outputText value="#{row.result == row.answer ? '&#x2714;':' '}" />
+								<f:attribute name="align" value="right" />
+					        </h:column>
+							<h:column>
+								<f:facet name="header">Time (s)</f:facet>
+								<h:outputText value="#{row.time > 0? row.time/1000.0 : ''}">
+									<f:convertNumber type="number" pattern="#.00"/>
+								</h:outputText>
+								<f:attribute name="align" value="right" />
+							</h:column>
+						</h:dataTable>
+					</h:form>
+				</td>
+			</tr>
+		</table>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="mathquiz" transaction-type="RESOURCE_LOCAL">
+		<class>com.net128.application.mathquiz.persistence.entities.Session</class>
+		<class>com.net128.application.mathquiz.persistence.entities.Level</class>
+		<class>com.net128.application.mathquiz.persistence.entities.User</class>
+		<class>com.net128.application.mathquiz.persistence.entities.Exercise</class>
+		<class>com.net128.application.mathquiz.persistence.entities.SingleOperationTerm</class>
+		<class>com.net128.application.mathquiz.persistence.entities.HighScore</class>
+        <properties>
+
+			<property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.H2Platform"/>        
+			<property name="javax.persistence.jdbc.password" value="test"/>
+			<property name="javax.persistence.jdbc.user" value="test"/>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:~/database/h2/mathquiz"/>
+
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+        </properties>
+    </persistence-unit>
+    
+	<persistence-unit name="mathquiz-test" transaction-type="RESOURCE_LOCAL">
+		<class>com.net128.application.mathquiz.persistence.entities.Session</class>
+		<class>com.net128.application.mathquiz.persistence.entities.Level</class>
+		<class>com.net128.application.mathquiz.persistence.entities.User</class>
+		<class>com.net128.application.mathquiz.persistence.entities.Exercise</class>
+		<class>com.net128.application.mathquiz.persistence.entities.HighScore</class>
+		<class>com.net128.application.mathquiz.persistence.entities.SingleOperationTerm</class>
+        <properties>
+			<property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.H2Platform"/>        
+			<property name="javax.persistence.jdbc.password" value="test"/>
+			<property name="javax.persistence.jdbc.user" value="test"/>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/database/h2/mathquiz"/>
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+        </properties>
+    </persistence-unit>
+</persistence>
