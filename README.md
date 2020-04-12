@@ -5,7 +5,7 @@ application) combined with a java backend. It uses XHTML, JSF and Javascript
 for the frontend. The application is supposed to be kid friendly, usable on
 a mobile device  and scales to any screen size.
 
-![MathQuiz1 Game](doc/mathquiz1.png?raw=true "Screenshots")
+![MathQuiz1 Game](doc/mathquiz1.png "Screenshots")
 
 ## build
 ```
