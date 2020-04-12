@@ -40,5 +40,5 @@ java -jar run/jetty-runner-*.jar --port 9999 target/mathquiz1.war
 
 ## tools
 
-In order to install jdk and maven the following tool has been used:
+In order to install jdk and maven the following tool has been used:  
 https://sdkman.io/
