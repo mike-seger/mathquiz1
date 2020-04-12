@@ -28,15 +28,15 @@ java -jar run/jetty-runner-*.jar --port 9999 target/mathquiz1.war
 ## requirements
 ### earliest spec tested:
 
-> Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:47+00:00)
-> Java version: 1.8.0_201, vendor: Oracle Corporation
-> OS name: "linux", version: "4.15.0-96-generic", arch: "amd64", family: "unix"
+> Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:47+00:00)  
+> Java version: 1.8.0_201, vendor: Oracle Corporation  
+> OS name: "linux", version: "4.15.0-96-generic", arch: "amd64", family: "unix"  
 
 ### latest spec tested:
 
-> Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
-> Java version: 15-ea, vendor: Oracle Corporation
-> OS name: "mac os x", version: "10.15.3", arch: "x86_64", family: "mac"
+> Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)  
+> Java version: 15-ea, vendor: Oracle Corporation  
+> OS name: "mac os x", version: "10.15.3", arch: "x86_64", family: "mac"  
 
 ## tools
 
