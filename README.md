@@ -18,8 +18,10 @@ mvn jetty:run -Djetty.http.port=9999
 ```
 
 ## play
-http://localhost:9999/
- 
+http://localhost:9999/  
+or  
+http://mathquiz1.herokuapp.com/  
+
 ## run standalone
 ```
 java -jar run/jetty-runner-*.jar --port 9999 target/mathquiz1.war
