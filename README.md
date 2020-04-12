@@ -26,17 +26,18 @@ java -jar run/jetty-runner-*.jar --port 9999 target/mathquiz1.war
 ```
 
 ## requirements
-### Earliest spec tested:
+### earliest spec tested:
 
 > Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:47+00:00)
 > Java version: 1.8.0_201, vendor: Oracle Corporation
 > OS name: "linux", version: "4.15.0-96-generic", arch: "amd64", family: "unix"
 
-### Latest spec tested:
+### latest spec tested:
 
 > Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
 > Java version: 15-ea, vendor: Oracle Corporation, runtime: /home/michael/.sdkman/candidates/java/15.ea.18-open
 
 ## tools
+
 In order to install jdk and maven the following tool has been used:
 https://sdkman.io/
