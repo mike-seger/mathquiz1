@@ -24,8 +24,9 @@ mvn jetty:run -Djetty.http.port=9999
 | hosted demo  | http://mathquiz1.herokuapp.com/  |
 
 ## run standalone
+an included runtime can be used to run the application with java only   
 ```
-java -jar run/jetty-runner-*.jar --port 9999 target/mathquiz1.war
+java -jar runtime/jetty-runner-*.jar --port 9999 target/mathquiz1.war
 ```
 
 ## requirements
