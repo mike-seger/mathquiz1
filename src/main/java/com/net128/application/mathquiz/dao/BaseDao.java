@@ -11,12 +11,13 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.spi.PersistenceProviderResolverHolder;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.net128.application.mathquiz.persistence.PersistenceManagerBean;
 
 public class BaseDao<T> implements Dao<T> {
-	private final static Logger logger = Logger.getLogger(BaseDao.class);
+	private final static Logger logger = LoggerFactory.getLogger(BaseDao.class);
 	protected final static EntityManagerFactory EMF;
 	private Class<T> clazz;
 	static {

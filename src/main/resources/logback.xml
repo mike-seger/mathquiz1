@@ -1,0 +1,16 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type
+			ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+		<encoder>
+			<pattern>%highlight([%-5level]) %boldMagenta(%d{"yyyy-MM-dd'T'HH:mm:ss,SSS", UTC} UTC) [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger level="info" name="com.net128.application.mathquiz.controller.LevelBean"/>
+        <logger level="info" name="com.net128.application.mathquiz.controller.numeric.RandomOperands"/>
+	
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

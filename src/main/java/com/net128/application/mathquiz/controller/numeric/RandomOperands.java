@@ -1,9 +1,10 @@
 package com.net128.application.mathquiz.controller.numeric;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RandomOperands {
-	private final static Logger logger = Logger.getLogger(RandomOperands.class);
+	private final static Logger logger = LoggerFactory.getLogger(RandomOperands.class);
 	private final static int maxRetries=50;
 	private static RoCache roCache=new RoCache();
 	private static Multiplication theMultiplication=new Multiplication();	

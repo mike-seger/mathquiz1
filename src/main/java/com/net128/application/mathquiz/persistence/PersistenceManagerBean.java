@@ -8,14 +8,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletContext;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.net128.application.mathquiz.dao.BaseDao;
 
 @ManagedBean
 @ApplicationScoped
 public class PersistenceManagerBean {
-	private final static Logger logger = Logger.getLogger(BaseDao.class);
+	private final static Logger logger = LoggerFactory.getLogger(PersistenceManagerBean.class);
 	private static final PersistenceManagerBean singleton = new PersistenceManagerBean();
 	protected EntityManagerFactory emf;
 

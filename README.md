@@ -10,5 +10,5 @@ backend. It uses HTML, JSF and Javascript for the client.
 
 ## run
 ```
-java -jar target/dependency/jetty-runner.jar --port 8082 target/*.war
+mvn jetty:run -Djetty.http.port=9999
 ```

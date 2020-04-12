@@ -11,7 +11,8 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.net128.application.mathquiz.dao.BaseDao;
 import com.net128.application.mathquiz.dao.Dao;
@@ -21,7 +22,7 @@ import com.net128.application.mathquiz.persistence.entities.User;
 @ManagedBean
 @SessionScoped
 public class UserBean {
-	private final static Logger logger = Logger.getLogger(UserBean.class);
+	private final static Logger logger = LoggerFactory.getLogger(UserBean.class);
 	private String name;
 	private String password;
 	
@@ -104,7 +105,7 @@ public class UserBean {
 			request.getHeader("user-agent"), request.getHeader("accept-language"),
 			request.getHeader("referer"));
 
-		logger.info(session);
+		logger.info(session.toString());
 		BaseDao<Session> sessionDao=new BaseDao<Session>(Session.class);
 		session=sessionDao.save(session);
 		

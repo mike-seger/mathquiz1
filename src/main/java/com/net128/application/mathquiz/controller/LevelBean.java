@@ -14,7 +14,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.net128.application.mathquiz.controller.numeric.IntOperands;
 import com.net128.application.mathquiz.controller.numeric.RandomOperands;
@@ -33,7 +34,7 @@ import com.net128.application.mathquiz.persistence.entities.User;
 @ManagedBean
 @SessionScoped
 public class LevelBean {
-	private final static Logger logger = Logger.getLogger(LevelBean.class);
+	private final static Logger logger = LoggerFactory.getLogger(LevelBean.class);
 	private SingleOperationTerm singleOperationTerm;
 	private UserBean userBean;
 	private Short answer;
