@@ -18,8 +18,9 @@ mvn jetty:run -Djetty.http.port=9999
 ```
 
 ## play
-| local build  | http://localhost:9999/           |
+|              |                                  |
 |--------------|----------------------------------|
+| local build  | http://localhost:9999/           |
 | hosted demo  | http://mathquiz1.herokuapp.com/  |
 
 ## run standalone
