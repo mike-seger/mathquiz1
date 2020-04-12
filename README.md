@@ -35,7 +35,8 @@ java -jar run/jetty-runner-*.jar --port 9999 target/mathquiz1.war
 ### latest spec tested:
 
 > Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
-> Java version: 15-ea, vendor: Oracle Corporation, runtime: /home/michael/.sdkman/candidates/java/15.ea.18-open
+> Java version: 15-ea, vendor: Oracle Corporation
+> OS name: "mac os x", version: "10.15.3", arch: "x86_64", family: "mac"
 
 ## tools
 
