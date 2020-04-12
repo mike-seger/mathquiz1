@@ -16,4 +16,4 @@ mvn jetty:run -Djetty.http.port=9999
 ```
 
 ## play
-(http://localhost:9999/)
+http://localhost:9999/
