@@ -29,6 +29,14 @@ an included runtime can be used to run the application with java only
 java -jar runtime/jetty-runner-*.jar --port 9999 target/mathquiz1.war
 ```
 
+## Deploy
+
+### Heroku
+```
+heroku deploy:war target/mathquiz1.war --app mathquiz1
+heroku ps:scale web=1 -a mathquiz1
+```
+
 ## platform compatibility
 ### earliest spec tested:
 
