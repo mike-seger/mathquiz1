@@ -3,7 +3,7 @@
 An early (late 2011) experiment of a browser application (aka single page
 application) combined with a java server implemented using JSF and JPA. 
 The client uses XHTML and Javascript. The application is supposed to be kid 
-friendly, usable on a mobile device and to scale to any screen size.
+friendly, usable on a mobile device and scale to any screen size.
 
 ![MathQuiz1 Game](src/main/resources/mathquiz1.png "Screenshots")
 
